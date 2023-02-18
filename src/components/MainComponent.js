@@ -47,12 +47,12 @@ class Main extends Component {
       <div>
         <Header />
             <Switch>
-                <Route path='Restaurent-main/home' component={HomePage} />
-                <Route exact path="Restaurent-main/menu" component={() => <Menu dishes={this.props.dishes} />} />
-                <Route path="Restaurent-main/menu/:dishId" component={DishWithId} />
-                <Route exact path="Restaurent-main/contactus" component={Contact} />
-                <Route path="Restaurent-main/aboutus" component={()=><About leaders={this.props.leaders}/>}/>
-                <Redirect to="Restaurent-main/home" />
+                <Route path={`${window.location.href}/home`} component={HomePage} />
+                <Route exact path={`${window.location.href}/main`} component={() => <Menu dishes={this.props.dishes} />} />
+                <Route path={`${window.location.href}/menu/:dishId`} component={DishWithId} />
+                <Route exact path={`${window.location.href}/contactus`} component={Contact} />
+                <Route path={`${window.location.href}/aboutus`} component={()=><About leaders={this.props.leaders}/>}/>
+                <Redirect to={`${window.location.href}/home`} />
             </Switch>
         <Footer />    
       </div>
